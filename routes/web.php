@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PostController::class, 'postIndex'])->name('post.postIndex');
-
+//Route::get('/', [PostController::class, 'Index'])->name('post.postIndex');
+Route::get('/', function () {
+    return view('auth.login');
+});
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -26,12 +28,12 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-     Route::get('/post', [PostController::class, 'index'])->name('post.index');
+    // Route::get('/post', [PostController::class, 'index'])->name('post.index');
     // Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
     // Route::post('/post/create', [PostController::class, 'store'])->name('post.store');
     // Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
     // Route::put('/post/{post}', [PostController::class, 'update'])->name('post.update');
-     Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+    // Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
     // Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
 
     Route::resource('post', PostController::class);
