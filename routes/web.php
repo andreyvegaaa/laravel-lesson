@@ -14,14 +14,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 //Route::get('/', [PostController::class, 'Index'])->name('post.postIndex');
-Route::get('/', [PostController::class, 'postIndex'])->name('post.postIndex');
+
+    Route::get('/', [PostController::class, 'postIndex'])->name('post.postIndex');
 
  // return view('auth.login');
-Route::middleware('auth', 'verified')->group(function () {
+    Route::middleware('auth', 'verified')->group(function () {
     Route::get('/dashboard', [PostController::class, 'postStatus'])->name('dashboard');
-
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

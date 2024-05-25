@@ -14,7 +14,7 @@
                         <h1>Dashboard</h1>
                         <nav>
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item active"></li>
                             </ol>
                         </nav>
                     </div><!-- End Page Title -->
@@ -55,7 +55,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <div
                                                         class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                                        <i class="bi bi-check-circle-fill"></i>
+                                                        <i class="bi bi-bookmark-check-fill"></i>
                                                     </div>
                                                     <div class="ps-3">
                                                         <h6>{{  $publishedPosts  }}</h6>
@@ -76,7 +76,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <div
                                                         class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                                        <i class="bbi bi-exclamation-square"></i>
+                                                        <i class="bi bi-bookmark-dash-fill"></i>
                                                     </div>
                                                     <div class="ps-3">
                                                         <h6>{{ $unpublishedPosts }}</h6>
